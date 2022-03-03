@@ -1,0 +1,82 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Illuminate\Auth\Access\HandlesAuthorization;
+use {{ namespacedModel }};
+use {{ namespacedUserModel }};
+
+class {{ class }}
+{
+    use HandlesAuthorization;
+
+    /**
+     * @param  \{{ namespacedUserModel }}  $user
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function viewAny({{ user }} $user): Illuminate\Auth\Access\Response|bool
+    {
+        //
+    }
+
+    /**
+     * @param  \{{ namespacedUserModel }}  $user
+     * @param  \{{ namespacedModel }}  ${{ modelVariable }}
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function view({{ user }} $user, {{ model }} ${{ modelVariable }}): Illuminate\Auth\Access\Response|bool
+    {
+        //
+    }
+
+    /**
+     * @param  \{{ namespacedUserModel }}  $user
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function create({{ user }} $user): Illuminate\Auth\Access\Response|bool
+    {
+        //
+    }
+
+    /**
+     * @param  \{{ namespacedUserModel }}  $user
+     * @param  \{{ namespacedModel }}  ${{ modelVariable }}
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function update({{ user }} $user, {{ model }} ${{ modelVariable }}): Illuminate\Auth\Access\Response|bool
+    {
+        //
+    }
+
+    /**
+     * @param  \{{ namespacedUserModel }}  $user
+     * @param  \{{ namespacedModel }}  ${{ modelVariable }}
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function delete({{ user }} $user, {{ model }} ${{ modelVariable }}): Illuminate\Auth\Access\Response|bool
+    {
+        //
+    }
+
+    /**
+     * @param  \{{ namespacedUserModel }}  $user
+     * @param  \{{ namespacedModel }}  ${{ modelVariable }}
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function restore({{ user }} $user, {{ model }} ${{ modelVariable }}): Illuminate\Auth\Access\Response|bool
+    {
+        //
+    }
+
+    /**
+     * @param  \{{ namespacedUserModel }}  $user
+     * @param  \{{ namespacedModel }}  ${{ modelVariable }}
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function forceDelete({{ user }} $user, {{ model }} ${{ modelVariable }}): Illuminate\Auth\Access\Response|bool
+    {
+        //
+    }
+}

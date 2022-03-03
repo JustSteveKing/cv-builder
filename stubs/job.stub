@@ -1,0 +1,27 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Illuminate\Foundation\Bus\Dispatchable;
+
+class {{ class }}
+{
+    use Dispatchable;
+
+    /**
+     * @return void
+     */
+    public function __construct(
+        //
+    ) {}
+
+    /**
+     * @return void
+     */
+    public function handle(): void
+    {
+        //
+    }
+}

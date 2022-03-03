@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ factoryNamespace }};
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class {{ factory }}Factory extends Factory
+{
+    /**
+     * @return array
+     */
+    public function definition(): array
+    {
+        return [
+            //
+        ];
+    }
+}
