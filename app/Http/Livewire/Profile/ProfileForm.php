@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Livewire\Profile;
 
-use App\Models\Profile;
 use App\Models\User;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Concerns\InteractsWithForms;
@@ -29,9 +28,7 @@ class ProfileForm extends Component implements HasForms
     {
         $this->validate();
 
-        Profile::query()
-            ->where('uuid', $this->uuid)
-            ->update(['bio' => $this->bio]);
+        auth()->user()->profile()->update(['bio' => $this->bio]);
     }
 
     protected function rules(): array
