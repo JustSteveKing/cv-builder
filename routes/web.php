@@ -9,6 +9,11 @@ Route::middleware(['auth'])->group(function () {
         'dashboard',
         App\Http\Controllers\Web\DashboardController::class,
     )->name('dashboard');
+
+    Route::prefix('profile')->as('profile:')->group(function () {
+        Route::get('/', App\Http\Controllers\Web\Profile\ShowController::class)->name('show');
+    });
+
 });
 
 require __DIR__ . '/auth.php';

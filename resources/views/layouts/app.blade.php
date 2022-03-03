@@ -22,7 +22,7 @@
     @stack('scripts')
 </head>
 
-<body class="antialiased font-sans bg-gray-200 overflow-hidden">
+<body class="antialiased font-sans bg-gray-200">
 <div class="min-h-full">
     <header class="pb-24 bg-indigo-600" x-data="Components.popover({ open: false, focus: true })" x-init="init()"
             @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
