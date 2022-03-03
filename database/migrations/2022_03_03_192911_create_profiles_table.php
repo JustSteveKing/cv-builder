@@ -18,7 +18,7 @@ return new class () extends Migration {
 
             $table->text('bio')->nullable();
 
-
+            $table->foreignId('user_id')->index()->constrained()->cascadeOnDelete();
 
             $table->timestamps();
         });

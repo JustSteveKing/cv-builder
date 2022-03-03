@@ -12,12 +12,12 @@ class {{ class }} extends Model
     use HasFactory;
 
     /**
-     * @var string[]|array<int,string>
+     * @var array<int,string>
      */
     protected $fillable = [];
 
     /**
-     * @var string[]|array<int,string>
+     * @var array<string,string>
      */
     protected $casts = [];
 
