@@ -7,6 +7,7 @@ namespace App\Models;
 use App\Models\Concerns\HasUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Company extends Model
 {
@@ -30,7 +31,13 @@ class Company extends Model
         'verified' => 'boolean',
     ];
 
-    // Relationships
+    public function experiences(): HasMany
+    {
+        return $this->hasMany(
+            related: Experience::class,
+            foreignKey: 'company_id',
+        );
+    }
 
     // Helper Methods
 }
