@@ -150,36 +150,29 @@
                     <div class="col-span-2">
                         <nav class="flex space-x-4">
 
-                            <a href="#"
-                               class="text-white text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"
-                               aria-current="page" x-state:on="Current" x-state:off="Default"
-                               x-state-description="Current: &quot;text-white&quot;, Default: &quot;text-indigo-100&quot;">
-                                Home
-                            </a>
+                            <x-profile-link
+                                href="{{ route('profile:show') }}"
+                            >
+                                Profile Bio
+                            </x-profile-link>
 
-                            <a href="#"
-                               class="text-indigo-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"
-                               x-state-description="undefined: &quot;text-white&quot;, undefined: &quot;text-indigo-100&quot;">
-                                Profile
-                            </a>
+                            <x-profile-link
+                                href="{{ route('profile:show') }}"
+                            >
+                                Experience
+                            </x-profile-link>
 
-                            <a href="#"
-                               class="text-indigo-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"
-                               x-state-description="undefined: &quot;text-white&quot;, undefined: &quot;text-indigo-100&quot;">
-                                Resources
-                            </a>
+                            <x-profile-link
+                                href="{{ route('profile:show') }}"
+                            >
+                                Education
+                            </x-profile-link>
 
-                            <a href="#"
-                               class="text-indigo-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"
-                               x-state-description="undefined: &quot;text-white&quot;, undefined: &quot;text-indigo-100&quot;">
-                                Company Directory
-                            </a>
-
-                            <a href="#"
-                               class="text-indigo-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10"
-                               x-state-description="undefined: &quot;text-white&quot;, undefined: &quot;text-indigo-100&quot;">
-                                Openings
-                            </a>
+                            <x-profile-link
+                                href="{{ route('profile:show') }}"
+                            >
+                                Share
+                            </x-profile-link>
 
                         </nav>
                     </div>
