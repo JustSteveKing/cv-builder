@@ -12,6 +12,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('profile')->as('profile:')->group(function () {
         Route::get('/', App\Http\Controllers\Web\Profile\ShowController::class)->name('show');
+
+        Route::prefix('experiences')->as('experiences:')->group(function () {
+            Route::get('/', App\Http\Controllers\Web\Profile\Experiences\ShowController::class)->name('show');
+        });
     });
 
 });

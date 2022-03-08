@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
+use App\Models\Company;
 use App\Models\Experience;
+use App\Models\JobTitle;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -21,8 +23,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'juststevemcd@gmail.com',
         ]);
 
-        Experience::factory(10)->create([
-            'profile_id' => $user->profile->id,
-        ]);
+        JobTitle::factory(20)->create();
+        Company::factory(10)->create();
     }
 }

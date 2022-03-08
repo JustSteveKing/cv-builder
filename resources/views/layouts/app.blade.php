@@ -157,7 +157,7 @@
                             </x-profile-link>
 
                             <x-profile-link
-                                href="{{ route('profile:show') }}"
+                                href="{{ route('profile:experiences:show') }}"
                             >
                                 Experience
                             </x-profile-link>
