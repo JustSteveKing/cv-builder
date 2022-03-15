@@ -25,4 +25,6 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('view/{share:token}', App\Http\Controllers\Public\Profile\ShowController::class)->name('view:share');
 
+Route::get('test', App\Http\Controllers\Web\Profile\DownloadController::class)->name('test');
+
 require __DIR__ . '/auth.php';
