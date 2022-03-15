@@ -169,7 +169,7 @@
                             </x-profile-link>
 
                             <x-profile-link
-                                href="{{ route('profile:show') }}"
+                                href="{{ route('profile:shares:show') }}"
                             >
                                 Share
                             </x-profile-link>

@@ -53,14 +53,19 @@ class ExperienceForm extends Component implements HasForms
                     MarkdownEditor::make('description')->required(),
                     DatePicker::make('started_at')->withoutTime()->required(),
                     Checkbox::make('current')
-                        ->afterStateUpdated(static fn(Closure $set, $state) =>
+                        ->afterStateUpdated(
+                            static fn (Closure $set, $state) =>
                             $set('finished_at', null),
                         )
                         ->reactive()
                         ->nullable(),
-                    DatePicker::make('finished_at')->hidden(static fn (Closure $get): bool =>
+                    DatePicker::make('finished_at')->hidden(
+                        static fn (Closure $get): bool =>
                         $get('current'),
-                    )->withoutTime()->nullable()
+                    )->withoutTime()->required(
+                        static fn (Closure $get): bool =>
+                        ! $get('current'),
+                    )
                 ])
         ];
     }

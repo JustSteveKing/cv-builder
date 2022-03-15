@@ -43,5 +43,13 @@ class Profile extends Model
         );
     }
 
+    public function shares(): HasMany
+    {
+        return $this->hasMany(
+            related: Share::class,
+            foreignKey: 'profile_id',
+        );
+    }
+
     // Helper Methods
 }

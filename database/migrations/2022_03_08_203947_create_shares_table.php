@@ -12,21 +12,16 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('experiences', function (Blueprint $table) {
+        Schema::create('shares', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid')->unique();
+            $table->uuid()->unique();
 
-            $table->text('description');
+            $table->string('token');
 
-            $table->boolean('current')->default(false);
+            $table->string('email');
+            $table->string('template')->nullable();
 
             $table->foreignId('profile_id')->index()->constrained()->cascadeOnDelete();
-            $table->foreignId('job_title_id')->index()->constrained()->cascadeOnDelete();
-            $table->foreignId('company_id')->index()->constrained()->cascadeOnDelete();
-
-            $table->date('started_at');
-            $table->date('finished_at')->nullable();
-
             $table->timestamps();
         });
     }
@@ -36,6 +31,6 @@ return new class () extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('experiences');
+        Schema::dropIfExists('shares');
     }
 };

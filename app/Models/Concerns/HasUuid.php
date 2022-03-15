@@ -14,7 +14,8 @@ trait HasUuid
      */
     public static function bootHasUuid(): void
     {
-        static::creating( fn (Model $model) =>
+        static::creating(
+            fn (Model $model) =>
             $model->uuid = Str::uuid()->toString(),
         );
     }

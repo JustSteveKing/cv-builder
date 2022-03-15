@@ -36,4 +36,3 @@ it('allows the user to update their bio on their profile', function (string $str
 
     expect($profile->refresh())->bio->toEqual($string);
 })->with('strings')->group('profile');
-

@@ -16,8 +16,13 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('experiences')->as('experiences:')->group(function () {
             Route::get('/', App\Http\Controllers\Web\Profile\Experiences\ShowController::class)->name('show');
         });
-    });
 
+        Route::prefix('shares')->as('shares:')->group(function () {
+            Route::get('/', App\Http\Controllers\Web\Profile\Shares\ShowController::class)->name('show');
+        });
+    });
 });
+
+Route::get('view/{share:token}', App\Http\Controllers\Public\Profile\ShowController::class)->name('view:share');
 
 require __DIR__ . '/auth.php';
