@@ -14,7 +14,6 @@ return new class () extends Migration {
     {
         Schema::create('shares', function (Blueprint $table) {
             $table->id();
-            $table->uuid()->unique();
 
             $table->string('token');
 

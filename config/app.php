@@ -178,6 +178,11 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ObservableServiceProvider::class,
 
+        /*
+         * Domain Service Providers...
+         */
+        Domains\Profile\Providers\ProfileServiceProvider::class,
+        Domains\View\Providers\ViewServiceProvider::class,
     ],
 
     /*

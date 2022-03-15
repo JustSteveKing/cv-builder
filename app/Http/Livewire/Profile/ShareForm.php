@@ -5,58 +5,53 @@ declare(strict_types=1);
 namespace App\Http\Livewire\Profile;
 
 use App\Models\Profile;
-use App\Models\User;
-use Filament\Forms\Components\MarkdownEditor;
+use Domains\Profile\Enums\ProfileTemplate;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
-use Illuminate\Database\Eloquent\Model;
-use Infrastructure\Profile\Actions\UpdateProfileBioContract;
+use Illuminate\Support\Facades\Redirect;
+use Infrastructure\Profile\Actions\CreateProfileShareContract;
 use Livewire\Component;
 
-class ProfileForm extends Component implements HasForms
+class ShareForm extends Component implements HasForms
 {
     use InteractsWithForms;
 
-    public Model $profile;
+    public Profile $profile;
 
-    public string $uuid;
+    public null|string $email = null;
 
-    public null|string $bio = null;
+    public null|string $template = null;
 
-    public function mount(Profile $profile): void
-    {
-        $this->profile = $profile;
-        $this->uuid = $profile->uuid;
-        $this->bio = $profile->bio;
-    }
-
-    public function submit(UpdateProfileBioContract $action): void
+    public function submit(CreateProfileShareContract $action): void
     {
         $this->validate();
 
         $action->handle(
-            profile: $this->profile,
-            bio: $this->bio,
+            profile: $this->profile->id,
+            email: $this->email,
+            template: $this->template,
         );
-    }
 
-    protected function rules(): array
-    {
-        return [
-            'bio' => [
-                'nullable',
-                'string',
-            ],
-        ];
+        Redirect::route(
+            'profile:shares:show', $this->profile->uuid,
+        );
     }
 
     protected function getFormSchema(): array
     {
         return [
-            MarkdownEditor::make('bio')->required(),
+            TextInput::make('email')->email()->required(),
+            Select::make('template')->options(
+                options: ProfileTemplate::class,
+            )->required(),
         ];
     }
 
+    /**
+     * @return string
+     */
     public function render(): string
     {
         return <<<'blade'

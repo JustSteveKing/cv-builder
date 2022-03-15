@@ -5,7 +5,7 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",
+        "php": "^8.1",
         "filament/forms": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
         "juststeveking/http-status-code": "^2.0",
@@ -34,7 +34,9 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Domains\\": "src/Domains",
+            "Infrastructure\\": "src/Infrastructure"
         }
     },
     "autoload-dev": {

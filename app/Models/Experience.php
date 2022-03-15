@@ -9,6 +9,40 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * App\Models\Experience
+ *
+ * @property int $id
+ * @property string $uuid
+ * @property string $description
+ * @property bool $current
+ * @property int $profile_id
+ * @property int $job_title_id
+ * @property int $company_id
+ * @property \Illuminate\Support\Carbon $started_at
+ * @property \Illuminate\Support\Carbon|null $finished_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Company $company
+ * @property-read \App\Models\JobTitle $jobTitle
+ * @property-read \App\Models\Profile $owner
+ * @method static \Database\Factories\ExperienceFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience whereCompanyId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience whereCurrent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience whereFinishedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience whereJobTitleId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience whereProfileId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience whereStartedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Experience whereUuid($value)
+ * @mixin \Eloquent
+ */
 class Experience extends Model
 {
     use HasUuid;

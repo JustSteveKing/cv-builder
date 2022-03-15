@@ -306,14 +306,9 @@
 
                 <!-- Right column -->
                 <div class="grid grid-cols-1 gap-4">
-                    <section aria-labelledby="section-2-title">
-                        <h2 class="sr-only" id="section-2-title">Section title</h2>
-                        <div class="rounded-lg bg-white overflow-hidden shadow">
-                            <div class="p-6">
-                                boop
-                            </div>
-                        </div>
-                    </section>
+                    @isset($sidebar)
+                        {{ $sidebar }}
+                    @endisset
                 </div>
             </div>
         </div>

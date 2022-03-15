@@ -16,7 +16,7 @@ class ShareFactory extends Factory
     public function definition(): array
     {
         return [
-            'token' => Str::random(),
+            'token' => Str::random(20),
             'email' => $this->faker->safeEmail(),
             'template' => 'test',
             'profile_id' => Profile::factory(),

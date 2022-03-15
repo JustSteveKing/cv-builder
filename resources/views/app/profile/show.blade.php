@@ -10,9 +10,10 @@
                     <p class="mt-1 text-sm text-gray-500">
                         Get started by adding a bio about yourself.
                     </p>
+
                 </div>
                 <livewire:profile.profile-form
-                    :user="$user"
+                    :profile="$profile"
                 />
             </div>
 
