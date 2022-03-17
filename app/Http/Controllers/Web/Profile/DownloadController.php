@@ -18,18 +18,12 @@ class DownloadController
 
         Browsershot::url(
             url: route('view:share', $share->token),
-        )
-            ->waitUntilNetworkIdle()
-            ->noSandbox()
-            ->showBackground()
-            ->setNodeBinary(
+        )->setNodeBinary(
                 nodeBinary: '/usr/bin/node',
-            )
-            ->setScreenshotType(
+            )->setScreenshotType(
                 type: 'pdf',
                 quality: 100,
-            )
-            ->save(
+            )->save(
                 targetPath: storage_path(
                     path: $path
                 ),
