@@ -5,7 +5,7 @@
             <div class="space-y-6">
                 <div>
                     <h1 class="text-lg leading-6 font-medium text-gray-900">
-                        Profile Shares
+                        Shares
                     </h1>
                     <p class="mt-1 text-sm text-gray-500">
                         Create sharable links to your CV.

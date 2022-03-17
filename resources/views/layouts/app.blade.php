@@ -163,9 +163,9 @@
                             </x-profile-link>
 
                             <x-profile-link
-                                href="{{ route('profile:show') }}"
+                                href="{{ route('profile:qualifications:show') }}"
                             >
-                                Education
+                                Qualifications
                             </x-profile-link>
 
                             <x-profile-link

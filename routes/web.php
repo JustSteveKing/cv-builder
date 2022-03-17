@@ -17,6 +17,10 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', App\Http\Controllers\Web\Profile\Experiences\ShowController::class)->name('show');
         });
 
+        Route::prefix('qualifications')->as('qualifications:')->group(function () {
+            Route::get('/', App\Http\Controllers\Web\Profile\Qualifications\ShowController::class)->name('show');
+        });
+
         Route::prefix('shares')->as('shares:')->group(function () {
             Route::get('/', App\Http\Controllers\Web\Profile\Shares\ShowController::class)->name('show');
         });
