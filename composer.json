@@ -9,11 +9,13 @@
         "filament/forms": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
         "juststeveking/http-status-code": "^2.0",
+        "juststeveking/laravel-toolkit": "dev-main",
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
         "spatie/browsershot": "^3.52",
+        "wire-elements/modal": "^1.0",
         "wire-elements/spotlight": "^1.0"
     },
     "require-dev": {

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Share;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Infrastructure\Profile\Queries\ProfileQuailficationsContract;
 use Infrastructure\View\Queries\ShareExperiencesQueryContract;
 use Infrastructure\View\Queries\ShareProfileQueryContract;
 use Infrastructure\View\Queries\ShareUserQueryContract;
@@ -18,6 +19,7 @@ class ShowController extends Controller
         public readonly ShareProfileQueryContract $profileQuery,
         public readonly ShareUserQueryContract $ownerQuery,
         public readonly ShareExperiencesQueryContract $experienceQuery,
+        public readonly ProfileQuailficationsContract $qualificationQuery,
     ) {}
 
     public function __invoke(Request $request, Share $share): View
@@ -31,6 +33,9 @@ class ShowController extends Controller
                 profile: $share->profile_id,
             ),
             'owner' => $this->ownerQuery->handle(
+                profile: $share->profile_id,
+            ),
+            'qualifications' => $this->qualificationQuery->handle(
                 profile: $share->profile_id,
             ),
         ]);

@@ -56,6 +56,9 @@ class Company extends Model
         'verified' => 'boolean',
     ];
 
+    /**
+     * @return HasMany<Experience>
+     */
     public function experiences(): HasMany
     {
         return $this->hasMany(

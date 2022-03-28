@@ -39,6 +39,9 @@ class JobTitle extends Model
         'name',
     ];
 
+    /**
+     * @return HasMany<Experience>
+     */
     public function experiences(): HasMany
     {
         return $this->hasMany(

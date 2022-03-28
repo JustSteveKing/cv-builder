@@ -71,6 +71,9 @@ class Experience extends Model
         'finished_at' => 'date',
     ];
 
+    /**
+     * @return BelongsTo<Profile>
+     */
     public function owner(): BelongsTo
     {
         return $this->belongsTo(
@@ -79,6 +82,9 @@ class Experience extends Model
         );
     }
 
+    /**
+     * @return BelongsTo<JobTitle>
+     */
     public function jobTitle(): BelongsTo
     {
         return $this->belongsTo(
@@ -87,6 +93,9 @@ class Experience extends Model
         );
     }
 
+    /**
+     * @return BelongsTo<Company>
+     */
     public function company(): BelongsTo
     {
         return $this->belongsTo(

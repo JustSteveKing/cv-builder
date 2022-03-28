@@ -6,7 +6,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class QualificationTitleFactory extends Factory
+class InstituteFactory extends Factory
 {
     /**
      * @return array
@@ -14,7 +14,9 @@ class QualificationTitleFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->sentence(),
+            'name' => $this->faker->company(),
+            'website' => $this->faker->url(),
+            'verified' => $this->faker->boolean(),
         ];
     }
 }

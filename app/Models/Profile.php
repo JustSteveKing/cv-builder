@@ -35,6 +35,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereUuid($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Qualification[] $qualifications
+ * @property-read int|null $qualifications_count
  */
 class Profile extends Model
 {
@@ -51,7 +53,7 @@ class Profile extends Model
     ];
 
     /**
-     * @return BelongsTo
+     * @return BelongsTo<User>
      */
     public function owner(): BelongsTo
     {
@@ -61,6 +63,9 @@ class Profile extends Model
         );
     }
 
+    /**
+     * @return HasMany<Experience>
+     */
     public function experiences(): HasMany
     {
         return $this->hasMany(
@@ -69,10 +74,24 @@ class Profile extends Model
         );
     }
 
+    /**
+     * @return HasMany<Share>
+     */
     public function shares(): HasMany
     {
         return $this->hasMany(
             related: Share::class,
+            foreignKey: 'profile_id',
+        );
+    }
+
+    /**
+     * @return HasMany<Qualification>
+     */
+    public function qualifications(): HasMany
+    {
+        return $this->hasMany(
+            related: Qualification::class,
             foreignKey: 'profile_id',
         );
     }

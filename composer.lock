@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ef74f10f33e090448e6072816406329",
+    "content-hash": "a1b8dbc01754fe3efdb46ebadce3985b",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -1287,6 +1287,67 @@
                 }
             ],
             "time": "2021-06-03T10:24:14+00:00"
+        },
+        {
+            "name": "juststeveking/laravel-toolkit",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JustSteveKing/laravel-toolkit.git",
+                "reference": "a614f59eca4a34db20f18c13dd6cbf232748c123"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JustSteveKing/laravel-toolkit/zipball/a614f59eca4a34db20f18c13dd6cbf232748c123",
+                "reference": "a614f59eca4a34db20f18c13dd6cbf232748c123",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0|^8.1"
+            },
+            "require-dev": {
+                "laravel/laravel": "^8.6",
+                "phpstan/phpstan": "^1.4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JustSteveKing\\LaravelToolkit\\Providers\\BusServiceProvider",
+                        "JustSteveKing\\LaravelToolkit\\Providers\\LaravelToolkitServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JustSteveKing\\LaravelToolkit\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve McDougall",
+                    "email": "juststevemcd@gmail.com",
+                    "homepage": "https://www.juststeveking.uk/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple toolkit package to help me do what I do with Laravel",
+            "support": {
+                "issues": "https://github.com/JustSteveKing/laravel-toolkit/issues",
+                "source": "https://github.com/JustSteveKing/laravel-toolkit/tree/main"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/JustSteveKing",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-02-07T11:28:20+00:00"
         },
         {
             "name": "laravel/framework",
@@ -5924,6 +5985,64 @@
             "time": "2021-03-09T10:59:23+00:00"
         },
         {
+            "name": "wire-elements/modal",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wire-elements/modal.git",
+                "reference": "0aed4ad3d4b31c77bcc007a46f87064d4b1670a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wire-elements/modal/zipball/0aed4ad3d4b31c77bcc007a46f87064d4b1670a6",
+                "reference": "0aed4ad3d4b31c77bcc007a46f87064d4b1670a6",
+                "shasum": ""
+            },
+            "require": {
+                "livewire/livewire": "^2.0",
+                "php": "^7.4|^8.0",
+                "spatie/laravel-package-tools": "^1.9"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.15",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LivewireUI\\Modal\\LivewireModalServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LivewireUI\\Modal\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Philo Hermans",
+                    "email": "me@philohermans.com"
+                }
+            ],
+            "description": "Laravel Livewire modal component",
+            "keywords": [
+                "laravel",
+                "livewire",
+                "modal"
+            ],
+            "support": {
+                "issues": "https://github.com/wire-elements/modal/issues",
+                "source": "https://github.com/wire-elements/modal/tree/1.0.5"
+            },
+            "time": "2022-03-03T17:16:00+00:00"
+        },
+        {
             "name": "wire-elements/spotlight",
             "version": "1.0.5",
             "source": {
@@ -10400,11 +10519,13 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "juststeveking/laravel-toolkit": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.0.2"
+        "php": "^8.1"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"

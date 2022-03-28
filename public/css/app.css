@@ -2688,6 +2688,18 @@ select{
 .-mb-px{
   margin-bottom: -1px;
 }
+.-ml-4{
+  margin-left: -1rem;
+}
+.-mt-4{
+  margin-top: -1rem;
+}
+.mr-1\.5{
+  margin-right: 0.375rem;
+}
+.mr-1{
+  margin-right: 0.25rem;
+}
 .-mb-7{
   margin-bottom: -1.75rem;
 }
@@ -3095,6 +3107,11 @@ select{
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
+.space-y-12 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(3rem * var(--tw-space-y-reverse));
+}
 .divide-y > :not([hidden]) ~ :not([hidden]){
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -3263,6 +3280,10 @@ select{
 .bg-red-500{
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.bg-green-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
 }
 .bg-gray-50{
   --tw-bg-opacity: 1;
@@ -3445,6 +3466,9 @@ select{
 .pr-9{
   padding-right: 2.25rem;
 }
+.pt-12{
+  padding-top: 3rem;
+}
 .text-left{
   text-align: left;
 }
@@ -3584,6 +3608,10 @@ select{
 .text-gray-800{
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+.text-green-800{
+  --tw-text-opacity: 1;
+  color: rgb(22 101 52 / var(--tw-text-opacity));
 }
 .text-danger-600{
   --tw-text-opacity: 1;
@@ -4468,6 +4496,10 @@ select{
     flex-direction: column;
   }
 
+  .sm\:flex-nowrap{
+    flex-wrap: nowrap;
+  }
+
   .sm\:items-start{
     align-items: flex-start;
   }
@@ -4716,12 +4748,22 @@ select{
     justify-content: space-between;
   }
 
+  .md\:space-y-12 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(3rem * var(--tw-space-y-reverse));
+  }
+
   .md\:border-t-0{
     border-top-width: 0px;
   }
 
   .md\:border-l{
     border-left-width: 1px;
+  }
+
+  .md\:pt-12{
+    padding-top: 3rem;
   }
 }
 @media (min-width: 1024px){

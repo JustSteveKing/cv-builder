@@ -18,9 +18,7 @@ class DownloadController
 
         Browsershot::url(
             url: route('view:share', $share->token),
-        )->setNodeBinary(
-                nodeBinary: '/usr/bin/node',
-            )->setScreenshotType(
+        )->setScreenshotType(
                 type: 'pdf',
                 quality: 100,
             )->save(

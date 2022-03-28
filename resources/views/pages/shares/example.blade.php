@@ -41,151 +41,77 @@
             </div>
         </div>
 
-        <!-- Tabs -->
-        <div class="mt-6 sm:mt-2 2xl:mt-5">
-            <div class="border-b border-gray-200">
-                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <nav class="-mb-px flex space-x-8" aria-label="Tabs">
 
-                        <a href="#"
-                           class="border-pink-500 text-gray-900 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
-                           x-state:on="Current" x-state:off="Default" aria-current="page"
-                           x-state-description="Current: &quot;border-pink-500 text-gray-900&quot;, Default: &quot;border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300&quot;">
-                            Profile
-                        </a>
+        <section class="space-y-6 md:space-y-12 pt-6 md:pt-12">
+            <!-- Description list -->
+            <div class="mt-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
 
-                        <a href="#"
-                           class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
-                           x-state-description="undefined: &quot;border-pink-500 text-gray-900&quot;, undefined: &quot;border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300&quot;">
-                            Calendar
-                        </a>
+                    <div class="sm:col-span-2">
+                        <dt class="text-lg font-bold text-gray-500">
+                            About
+                        </dt>
+                        <dd class="mt-1 prose max-w-prose text-sm text-gray-900 space-y-5">
 
-                        <a href="#"
-                           class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
-                           x-state-description="undefined: &quot;border-pink-500 text-gray-900&quot;, undefined: &quot;border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300&quot;">
-                            Recognition
-                        </a>
+                            {!! str($profile->bio)->markdown([
+                                'html_input' => 'strip',
+                            ]) !!}
 
-                    </nav>
-                </div>
-            </div>
-        </div>
-
-        <!-- Description list -->
-        <div class="mt-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
-
-                <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                        Phone
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                        (555) 123-4567
-                    </dd>
-                </div>
-
-                <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                        Email
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                        ricardocooper@example.com
-                    </dd>
-                </div>
-
-                <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                        Title
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                        Senior Front-End Developer
-                    </dd>
-                </div>
-
-                <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                        Team
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                        Product Development
-                    </dd>
-                </div>
-
-                <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                        Location
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                        San Francisco
-                    </dd>
-                </div>
-
-                <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                        Sits
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                        Oasis, 4th floor
-                    </dd>
-                </div>
-
-                <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                        Salary
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                        $145,000
-                    </dd>
-                </div>
-
-                <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                        Birthday
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                        June 8, 1990
-                    </dd>
-                </div>
-
-                <div class="sm:col-span-2">
-                    <dt class="text-sm font-medium text-gray-500">
-                        About
-                    </dt>
-                    <dd class="mt-1 max-w-prose text-sm text-gray-900 space-y-5">
-
-                        {!! str($profile->bio)->markdown([
-                            'html_input' => 'strip',
-                        ]) !!}
-
-                    </dd>
-                </div>
-            </dl>
-        </div>
-
-        <!-- Team member list -->
-        <div class="mt-8 max-w-5xl mx-auto px-4 pb-12 sm:px-6 lg:px-8">
-            <h2 class="text-sm font-medium text-gray-500">
-                Work History
-            </h2>
-            <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                @foreach ($experiences as $experience)
-                    <div
-                        class="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-pink-500">
-
-                        <div class="flex-1 min-w-0">
-                            <a href="#" class="focus:outline-none">
-                                <span class="absolute inset-0" aria-hidden="true"></span>
-                                <p class="text-sm font-medium text-gray-900">
-                                    {{ $experience->jobTitle->name }}
-                                </p>
-                                <p class="text-sm text-gray-500 truncate">
-                                    {{ $experience->company->name }}
-                                </p>
-                            </a>
-                        </div>
+                        </dd>
                     </div>
-                @endforeach
+
+                </dl>
             </div>
-        </div>
+
+            <div class="mt-8 max-w-5xl mx-auto px-4 pb-12 sm:px-6 lg:px-8">
+                <h2 class="text-sm font-medium text-gray-500">
+                    Work History
+                </h2>
+                <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    @foreach ($experiences as $experience)
+                        <div
+                            class="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-pink-500">
+
+                            <div class="flex-1 min-w-0">
+                                <a href="#" class="focus:outline-none">
+                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                    <p class="text-sm font-medium text-gray-900">
+                                        {{ $experience->jobTitle->name }}
+                                    </p>
+                                    <p class="text-sm text-gray-500 truncate">
+                                        {{ $experience->company->name }}
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="mt-8 max-w-5xl mx-auto px-4 pb-12 sm:px-6 lg:px-8">
+                <h2 class="text-sm font-medium text-gray-500">
+                    Qualifications
+                </h2>
+                <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    @foreach ($qualifications as $qualification)
+                        <div
+                            class="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-pink-500">
+
+                            <div class="flex-1 min-w-0">
+                                <a href="#" class="focus:outline-none">
+                                    <span class="absolute inset-0" aria-hidden="true"></span>
+                                    <p class="text-sm font-medium text-gray-900">
+                                        {{ $qualification->title->name }}
+                                    </p>
+                                    <p class="text-sm text-gray-500 truncate">
+                                        {{ $qualification->institute->name }}
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
     </article>
 </x-guest-layout>

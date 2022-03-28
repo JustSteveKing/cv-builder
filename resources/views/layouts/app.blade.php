@@ -24,8 +24,8 @@
 
 <body class="antialiased font-sans bg-gray-200">
 <div class="min-h-full">
-    <header class="pb-24 bg-indigo-600" x-data="Components.popover({ open: false, focus: true })" x-init="init()"
-            @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
+    <header class="pb-24 bg-indigo-600" x-data="{ open: false, focus: true }"
+            @keydown.escape="open = false">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <div class="relative py-5 flex items-center justify-center lg:justify-between">
                 <!-- Logo -->
@@ -51,16 +51,15 @@
                     </button>
 
                     <!-- Profile dropdown -->
-                    <div x-data="Components.menu({ open: false })" x-init="init()"
-                         @keydown.escape.stop="open = false; focusButton()" @click.away="onClickAway($event)"
+                    <div x-data="{ open: false }"
+                         @keydown.escape.stop="open = false" @click.away="open = false"
                          class="ml-4 relative flex-shrink-0">
                         <div>
                             <button type="button"
                                     class="bg-white rounded-full flex text-sm ring-2 ring-white ring-opacity-20 focus:outline-none focus:ring-opacity-100"
-                                    id="user-menu-button" x-ref="button" @click="onButtonClick()"
-                                    @keyup.space.prevent="onButtonEnter()" @keydown.enter.prevent="onButtonEnter()"
+                                    id="user-menu-button" x-ref="button" @click="open = true"
                                     aria-expanded="false" aria-haspopup="true" x-bind:aria-expanded="open.toString()"
-                                    @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()">
+                            >
                                 <span class="sr-only">Open user menu</span>
                                 <img class="h-8 w-8 rounded-full"
                                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
@@ -72,27 +71,19 @@
                              x-transition:leave-start="transform opacity-100 scale-100"
                              x-transition:leave-end="transform opacity-0 scale-95"
                              class="origin-top-right z-40 absolute -right-2 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                             x-ref="menu-items" x-description="Dropdown menu, show/hide based on menu state."
-                             x-bind:aria-activedescendant="activeDescendant" role="menu" aria-orientation="vertical"
-                             aria-labelledby="user-menu-button" tabindex="-1" @keydown.arrow-up.prevent="onArrowUp()"
-                             @keydown.arrow-down.prevent="onArrowDown()" @keydown.tab="open = false"
-                             @keydown.enter.prevent="open = false; focusButton()"
-                             @keyup.space.prevent="open = false; focusButton()" style="display: none;">
+                             x-ref="menu-items" role="menu" aria-orientation="vertical"
+                             aria-labelledby="user-menu-button" tabindex="-1" @keydown.tab="open = false"
+                             @keydown.enter.prevent="open = false"
+                             @keyup.space.prevent="open = false" style="display: none;">
 
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" x-state:on="Active"
-                               x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem"
-                               tabindex="-1" id="user-menu-item-0" @mouseenter="activeIndex = 0"
-                               @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Your Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                               tabindex="-1" id="user-menu-item-0" @click="open = false">Your Profile</a>
 
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" x-state:on="Active"
-                               x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 1 }" role="menuitem"
-                               tabindex="-1" id="user-menu-item-1" @mouseenter="activeIndex = 1"
-                               @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Settings</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                               tabindex="-1" id="user-menu-item-1" @click="open = false">Settings</a>
 
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" x-state:on="Active"
-                               x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 2 }" role="menuitem"
-                               tabindex="-1" id="user-menu-item-2" @mouseenter="activeIndex = 2"
-                               @mouseleave="activeIndex = -1" @click="open = false; focusButton()">Sign out</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                               tabindex="-1" id="user-menu-item-2" @click="open = false">Sign out</a>
 
                         </div>
 
@@ -323,5 +314,6 @@
 </div>
 
     <livewire:livewire-ui-spotlight/>
+    <livewire:livewire-ui-modal />
 </body>
 </html>
