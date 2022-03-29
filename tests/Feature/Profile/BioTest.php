@@ -29,7 +29,7 @@ it('allows the user to update their bio on their profile', function (string $str
         $profile->bio
     )->toBeString();
 
-    Livewire::test(ProfileForm::class, ['user' => $profile->owner])
+    Livewire::test(ProfileForm::class, ['profile' => $profile])
         ->set('bio', $string)
         ->call('submit')
         ->assertHasNoErrors();
